@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Box, Container, Text, VStack, Heading, Image } from '@chakra-ui/react';
+import ApplicationForm from './Components/ApplicationForm';
+import Navbar from './Components/Navbar';
+import image from './assets/Students.png';
+import AboutTheMentor from './Components/AboutTheMentor';
+// import ApplicationForm from './ApplicationForm';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box textAlign="center" fontSize="xl">
+      <Navbar />
+      <Container maxW="container.md">
+        <Box p={4}>
+          <Heading as="h1" size="xl" mb={6}>
+            Welcome to Your Path to Tech
+          </Heading>
+        </Box>
+        <VStack spacing={8}>
+          <AboutTheMentor />
+          <Image
+            src={image}
+            alt="Devs"
+            // boxSize="250px"
+            width="70%"
+            // objectFit="contain"
+            // objectFit="fill"
+            // fit="scale-down"
+            borderRadius="10px"
+          />
+          <ApplicationForm />
+        </VStack>
+      </Container>
+    </Box>
   );
 }
 
