@@ -4,6 +4,7 @@ import ApplicationForm from './Components/ApplicationForm';
 import Navbar from './Components/Navbar';
 import image from './assets/Students.png';
 import AboutTheMentor from './Components/AboutTheMentor';
+import Footer from './Components/Footer';
 // import ApplicationForm from './ApplicationForm';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <ApplicationForm />
         </VStack>
       </Container>
+      <Footer />
     </Box>
   );
 }
