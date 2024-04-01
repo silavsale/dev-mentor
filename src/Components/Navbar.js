@@ -77,6 +77,9 @@ function Navbar() {
                   <Link href="/" p={2}>
                     Home
                   </Link>
+                  <Link href="/about" p={2}>
+                    About
+                  </Link>
                   <Link href="/contact" p={2}>
                     Contact
                   </Link>
@@ -95,6 +98,9 @@ function Navbar() {
         <Flex alignItems="center">
           <Link px={1} href="/" style={{ textDecoration: 'none' }}>
             <Button>Home</Button>
+          </Link>
+          <Link px={1} href="/about" style={{ textDecoration: 'none' }}>
+            <Button>About Mantor</Button>
           </Link>
           <Link pr={5} href="/contact" style={{ textDecoration: 'none' }}>
             <Button>Contact</Button>
