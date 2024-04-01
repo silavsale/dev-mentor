@@ -6,14 +6,66 @@ import {
   Image,
   Text,
   VStack,
+  SimpleGrid,
+  Tooltip,
   useColorModeValue,
 } from '@chakra-ui/react';
 import imageOfCoder from '../assets/Coder.webp';
 
 function AboutTheMentor() {
-  // Use color mode value for dynamic color changes.
   const bgColor = useColorModeValue('gray.100', 'gray.700');
-  const borderColor = useColorModeValue('gray.200', 'gray.600');
+
+  const clients = [
+    {
+      name: 'Government of Quebec',
+      description: 'Developed public service applications.',
+    },
+    {
+      name: 'Government of Canada',
+      description: 'Worked on national digital infrastructure projects.',
+    },
+    {
+      name: 'University of Montreal',
+      description: 'Implemented educational management systems.',
+    },
+    {
+      name: 'Exceldor',
+      description: 'Created supply chain management software.',
+    },
+    {
+      name: 'Bonduelle',
+      description: 'Engineered agritech solutions for sustainable farming.',
+    },
+    {
+      name: 'Veolia',
+      description: 'Developed environmental and waste management systems.',
+    },
+    {
+      name: 'UQAM',
+      description: 'Collaborated on university administration software.',
+    },
+    {
+      name: 'MERCK',
+      description:
+        'Contributed to pharmaceutical research and development platforms.',
+    },
+    {
+      name: 'Desjardins',
+      description: 'Enhanced banking and financial services systems.',
+    },
+    {
+      name: 'Molson',
+      description: 'Upgraded production and distribution tracking systems.',
+    },
+    {
+      name: 'L’Oréal Paris',
+      description: 'Implemented beauty and retail management solutions.',
+    },
+    {
+      name: 'Castorama',
+      description: 'Developed retail and inventory management software.',
+    },
+  ];
 
   return (
     <Box textAlign="center" fontSize="xl" m={10}>
@@ -25,15 +77,7 @@ function AboutTheMentor() {
             width="50%"
             borderRadius="10px"
           />
-          <Box
-            p={{ base: 4, md: 6 }}
-            // shadow="lg"
-            // borderWidth="1px"
-            // borderColor={borderColor}
-            // borderRadius="lg"
-            // bg={bgColor}
-            // textAlign="left"
-          >
+          <Box p={{ base: 4, md: 6 }}>
             <Heading
               fontSize={{ base: 'xl', md: '2xl' }}
               color="teal.400"
@@ -42,22 +86,48 @@ function AboutTheMentor() {
               About the Mentor
             </Heading>
             <Text mt={4} fontSize={{ base: 'sm', md: 'md' }}>
-              With many years of full-stack web development experience, ranging
-              from startups to large corporations and government projects, I
-              have acquired a comprehensive understanding of the tech landscape.
-              My journey has equipped me with not just technical skills, but
-              also with a deep understanding of what it takes to succeed in
-              professional environments.
+              As a seasoned full-stack web developer, my experience spans across
+              providing software solutions for a variety of sectors, including
+              governmental agencies, educational institutions, and leading
+              corporations in various industries. My technical journey has
+              allowed me to work indirectly with reputable organizations through
+              the software companies I was part of.
             </Text>
             <Text mt={4} fontSize={{ base: 'sm', md: 'md' }}>
-              Over the last 5 years, I have dedicated myself to mentoring
-              aspiring developers, guiding them not only through the technical
-              intricacies of web development but also through the nuances of
-              professional life in tech. My focus extends beyond coding to
-              include essential industry practices like Agile methodologies,
-              sprint planning, task management, and more, ensuring my mentees
-              are well-prepared for their first tech job.
+              In the past 5 years, my role evolved towards mentoring upcoming
+              developers, helping them navigate both the technical landscape and
+              the professional environment of the tech industry. I have
+              emphasized practical skills like Agile methodologies, sprint
+              planning, and task management, preparing mentees for their
+              professional careers in technology.
             </Text>
+            <Heading
+              fontSize={{ base: 'md', md: 'xl' }}
+              color="teal.400"
+              mt={6}
+            >
+              List of Clients I build software for:
+            </Heading>
+            <SimpleGrid columns={3} spacing={5} mt={2}>
+              {clients.map((client) => (
+                <Tooltip
+                  key={client.name}
+                  label={client.description}
+                  placement="bottom"
+                  hasArrow
+                >
+                  <Box
+                    cursor="pointer"
+                    bg={bgColor}
+                    borderRadius={5}
+                    p={3}
+                    textAlign="center"
+                  >
+                    {client.name}
+                  </Box>
+                </Tooltip>
+              ))}
+            </SimpleGrid>
           </Box>
         </VStack>
       </Container>
