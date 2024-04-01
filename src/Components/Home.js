@@ -18,7 +18,7 @@ const Home = () => {
           </Heading>
         </Box>
         <VStack spacing={8}>
-          <AboutTheMentor />
+          {/* <AboutTheMentor /> */}
           <Image src={image} alt="Devs" width="50%" borderRadius="10px" />
           <MentorDescriptionShort />
           <TechMentorship />
