@@ -27,7 +27,14 @@ function TechMentorship() {
   ];
 
   return (
-    <Box p={5} borderWidth="1px" borderRadius="lg" boxShadow="lg">
+    <Box
+      mt={10}
+      mb={24}
+      p={10}
+      borderWidth="1px"
+      borderRadius="lg"
+      boxShadow="lg"
+    >
       <Heading mb={4}>Technologies I Mentor In</Heading>
       <Wrap>
         {techStack.map((tech) => (

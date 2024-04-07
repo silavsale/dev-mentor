@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Container, VStack, Heading, Image } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
 
 import Navbar from './Navbar';
 import AboutTheMentor from './AboutTheMentor';
@@ -9,12 +10,14 @@ import TechMentorship from './Technologies';
 import Footer from './Footer';
 
 const Home = () => {
+  const { t } = useTranslation();
+
   return (
     <Box textAlign="center" fontSize="xl">
       <Container maxW="container.md">
         <Box p={4}>
           <Heading as="h1" size="xl" mb={6}>
-            Welcome to Your Path to Tech
+            {t('welcomeToYourPathToTech')}
           </Heading>
         </Box>
         <VStack spacing={8}>

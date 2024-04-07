@@ -68,7 +68,7 @@
 
 import React from 'react';
 import { Flex } from '@chakra-ui/react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from './Components/Home';
 import ContactPage from './Components/ContactPage';
 import Navbar from './Components/Navbar';
@@ -78,20 +78,16 @@ import AboutTheMentor from './Components/AboutTheMentor';
 
 function App() {
   return (
-    // <Flex direction="column" minHeight="100vh">
     <>
       <Navbar />
-      {/* <Flex flex="1" direction="column"> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/siteinfo" element={<SiteInfo />} />
         <Route path="/about" element={<AboutTheMentor />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
-      {/* </Flex> */}
       <Footer />
     </>
-    // </Flex>
   );
 }
 
