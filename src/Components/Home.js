@@ -8,6 +8,8 @@ import image from '../assets/Students.png';
 import MentorDescriptionShort from './MentorDescription';
 import TechMentorship from './Technologies';
 import Footer from './Footer';
+import MentorshipServices from './MentorshipServices';
+import WebDevelopmentChecklist from './WebDevelopmentChecklist';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -23,7 +25,9 @@ const Home = () => {
         <VStack spacing={8}>
           {/* <AboutTheMentor /> */}
           <Image src={image} alt="Devs" width="50%" borderRadius="10px" />
+          <MentorshipServices />
           <MentorDescriptionShort />
+          {/* <WebDevelopmentChecklist /> */}
           <TechMentorship />
           {/* <ApplicationForm /> */}
         </VStack>
