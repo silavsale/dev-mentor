@@ -1,7 +1,7 @@
 {
   "aboutTheMentor": "À propos du mentor",
   "mentorDescription": "En tant que développeur web full-stack expérimenté, mon expérience s'étend à la fourniture de solutions logicielles pour divers secteurs, y compris les agences gouvernementales, les institutions éducatives et les grandes entreprises de différents secteurs. Mon parcours technique m'a permis de travailler indirectement avec des organisations réputées à travers les entreprises de logiciels dont je faisais partie.",
-  "mentorRoleEvolution": "Au cours des 5 dernières années, mon rôle a évolué vers le mentorat de développeurs en devenir, les aidant à naviguer à la fois dans le paysage technique et dans l'environnement professionnel de l'industrie technologique. J'ai mis l'accent sur des compétences pratiques telles que les méthodologies Agile, la planification de sprint et la gestion des tâches, préparant les mentorés pour leurs carrières professionnelles dans la technologie.",
+  "mentorRoleEvolution": "Depuis 2017, mon rôle a évolué vers le mentorat de développeurs en devenir, les aidant à naviguer à la fois dans le paysage technique et dans l'environnement professionnel de l'industrie technologique. J'ai mis l'accent sur des compétences pratiques telles que les méthodologies Agile, la planification de sprint et la gestion des tâches, préparant les mentorés pour leurs carrières professionnelles dans la technologie.",
   "listOfClients": "Liste des clients pour lesquels j'ai développé des logiciels",
   "developedPublicServiceApplications": "Développé des applications de service public.",
   "workedOnNationalDigitalInfrastructure": "Travaillé sur des projets d'infrastructure numérique nationale.",
@@ -53,5 +53,12 @@
   "professionalGrowth": "Croissance professionnelle : Apprenez l'Agile, la planification de sprint et la gestion des tâches pour exceller dans les rôles technologiques.",
   "careerFocusedCurriculum": "Programme axé sur la carrière : Acquérez les compétences que les employeurs exigent dans le paysage technologique actuel.",
   "personalizedGuidance": "Orientation personnalisée : Bénéficiez de mon expérience pour naviguer efficacement dans les défis techniques et professionnels.",
-  "transformYourPassion": "Transformez votre passion en profession. Rejoignez mes cours et tracez un chemin vers le succès dans l'industrie technologique."
+  "transformYourPassion": "Transformez votre passion en profession. Rejoignez mes cours et tracez un chemin vers le succès dans l'industrie technologique.",
+  "technologiesIMentorIn": "Technologies de Mentorat",
+  "whatIOffer": "Ce que j'offre",
+  "mentorshipProgramDescription": "Dans le cadre de mon programme de mentorat, je fournis un soutien complet adapté aux développeurs web aspirants et établis. Voici comment je peux vous aider :",
+  "oneOnOneCoaching": "Coaching individuel : Sessions personnalisées axées sur des domaines spécifiques d'amélioration, vous aidant à surmonter les défis et à développer efficacement vos compétences.",
+  "careerGuidance": "Orientation professionnelle : Obtenez de l'aide pour la recherche d'emploi, la rédaction de CV et la préparation aux entretiens, le tout adapté à l'industrie du développement web pour améliorer votre employabilité.",
+  "technicalTraining": "Formation technique : Tutoriels approfondis sur les technologies web modernes, les meilleures pratiques en développement logiciel et la compréhension des méthodologies agiles pour vous maintenir à jour et prêt pour le marché.",
+  "projectSupport": "Support de projet : Recevez des conseils sur des projets réels, couvrant toutes les phases de la planification et du développement à la mise en service et la maintenance, vous assurant d'acquérir une expérience pratique."
 }

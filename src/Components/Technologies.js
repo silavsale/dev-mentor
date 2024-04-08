@@ -1,10 +1,14 @@
 import React from 'react';
 import { Box, Heading, Wrap, WrapItem, Tag } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
 
 function TechMentorship() {
+  const { t } = useTranslation();
+
   const techStack = [
     'JavaScript',
     'React',
+    'Next. js',
     'Node.js',
     'Express',
     'MongoDB',
@@ -13,8 +17,10 @@ function TechMentorship() {
     'Tailwind CSS',
     'Chakra UI',
     'Docker',
+    'Devops',
     'Git',
     'GitHub',
+    'CI CD pipeline',
     'NPM',
     'Yarn',
     'Webpack',
@@ -24,6 +30,8 @@ function TechMentorship() {
     'Chai',
     'Postman',
     'ESLint',
+    'Agile',
+    'Jira',
   ];
 
   return (
@@ -35,7 +43,7 @@ function TechMentorship() {
       borderRadius="lg"
       boxShadow="lg"
     >
-      <Heading mb={4}>Technologies I Mentor In</Heading>
+      <Heading mb={4}> {t('technologiesIMentorIn')}</Heading>
       <Wrap>
         {techStack.map((tech) => (
           <WrapItem key={tech}>

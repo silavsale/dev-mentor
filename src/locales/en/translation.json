@@ -1,7 +1,7 @@
 {
   "aboutTheMentor": "About the Mentor",
   "mentorDescription": "As a seasoned full-stack web developer, my experience spans across providing software solutions for a variety of sectors, including governmental agencies, educational institutions, and leading corporations in various industries. My technical journey has allowed me to work indirectly with reputable organizations through the software companies I was part of.",
-  "mentorRoleEvolution": "In the past 5 years, my role evolved towards mentoring upcoming developers, helping them navigate both the technical landscape and the professional environment of the tech industry. I have emphasized practical skills like Agile methodologies, sprint planning, and task management, preparing mentees for their professional careers in technology.",
+  "mentorRoleEvolution": "From 2017 my role evolved towards mentoring upcoming developers, helping them navigate both the technical landscape and the professional environment of the tech industry. I have emphasized practical skills like Agile methodologies, sprint planning, and task management, preparing mentees for their professional careers in technology.",
   "listOfClients": "List of Clients I build software for",
   "developedPublicServiceApplications": "Developed public service applications.",
   "workedOnNationalDigitalInfrastructure": "Worked on national digital infrastructure projects.",
@@ -53,5 +53,12 @@
   "professionalGrowth": "Professional Growth: Learn Agile, sprint planning, and task management to excel in tech roles.",
   "careerFocusedCurriculum": "Career-Focused Curriculum: Gain the skills that employers demand in today’s tech landscape.",
   "personalizedGuidance": "Personalized Guidance: Benefit from my experience to navigate both technical and career challenges effectively.",
-  "transformYourPassion": "Transform your passion into a profession. Join my classes and chart a path to success in the tech industry."
+  "transformYourPassion": "Transform your passion into a profession. Join my classes and chart a path to success in the tech industry.",
+  "technologiesIMentorIn": "Technologies I Mentor In",
+  "whatIOffer": "What I Offer",
+  "mentorshipProgramDescription": "As part of my mentorship program, I provide comprehensive support tailored to aspiring and established web developers. Here's how I can help you:",
+  "oneOnOneCoaching": "One-on-One Coaching: Personalized sessions focusing on specific areas of improvement, helping you overcome challenges and grow your skills effectively.",
+  "careerGuidance": "Career Guidance: Get assistance with job searching, resume building, and interview preparation, all tailored to the web development industry to enhance your employability.",
+  "technicalTraining": "Technical Training: In-depth tutorials on modern web technologies, best practices in software development, and understanding agile methodologies to keep you updated and market-ready.",
+  "projectSupport": "Project Support: Receive guidance on real-world projects, covering all phases from planning and development to deployment and maintenance, ensuring you gain practical, hands-on experience."
 }

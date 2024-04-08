@@ -170,18 +170,20 @@ function Navbar() {
       borderBottom="1px solid"
       borderColor={colorMode === 'light' ? 'gray.100' : 'gray.900'}
     >
-      <Flex alignItems="center">
-        <Icon
-          as={FaLaptopCode}
-          mr={2}
-          w={6}
-          h={6}
-          transition="transform 0.5s"
-          _hover={{ transform: 'rotate(360deg)' }}
-        />
-        <Text fontSize="xl" fontWeight="bold">
-          {t('yourPathToTech')}
-        </Text>
+      <Flex alignItems="center" justifyContent="center" alignContent="center">
+        <Link to="/">
+          <Button colorScheme="teal" variant="ghost">
+            <Icon
+              as={FaLaptopCode}
+              mr={2}
+              w={6}
+              h={6}
+              transition="transform 0.5s"
+              _hover={{ transform: 'rotate(360deg)' }}
+            />
+            {t('yourPathToTech')}
+          </Button>
+        </Link>
 
         <Link to="/siteinfo">
           <Button mx={10} px={1} size={'sm'}>
@@ -189,6 +191,33 @@ function Navbar() {
           </Button>
         </Link>
       </Flex>
+      {/* <Flex
+      // alignItems="center"
+      // justifyContent="center"
+      // alignContent="center"
+      >
+        <Link to="/">
+          <Icon
+            as={FaLaptopCode}
+            mr={2}
+            w={6}
+            h={6}
+            transition="transform 0.5s"
+            _hover={{ transform: 'rotate(360deg)' }}
+          />
+        </Link>
+        <Link to="/">
+          <Text fontSize="xl" fontWeight="bold">
+            {t('yourPathToTech')}
+          </Text>
+        </Link>
+
+        <Link to="/siteinfo">
+          <Button mx={10} px={1} size={'sm'}>
+            V 1.0
+          </Button>
+        </Link>
+      </Flex> */}
 
       <Flex alignItems="center">
         {isMobile ? (
