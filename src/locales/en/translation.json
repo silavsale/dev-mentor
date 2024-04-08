@@ -60,5 +60,16 @@
   "oneOnOneCoaching": "One-on-One Coaching: Personalized sessions focusing on specific areas of improvement, helping you overcome challenges and grow your skills effectively.",
   "careerGuidance": "Career Guidance: Get assistance with job searching, resume building, and interview preparation, all tailored to the web development industry to enhance your employability.",
   "technicalTraining": "Technical Training: In-depth tutorials on modern web technologies, best practices in software development, and understanding agile methodologies to keep you updated and market-ready.",
-  "projectSupport": "Project Support: Receive guidance on real-world projects, covering all phases from planning and development to deployment and maintenance, ensuring you gain practical, hands-on experience."
+  "projectSupport": "Project Support: Receive guidance on real-world projects, covering all phases from planning and development to deployment and maintenance, ensuring you gain practical, hands-on experience.",
+  "yourName": "Your Name",
+  "enterYourName": "Enter your name",
+  "yourEmail": "Your Email",
+  "enterYourEmail": "Enter your email",
+  "yourMessage": "Your Message",
+  "enterYourMessage": "Enter your message",
+  "sendEmail": "Send Email",
+  "emailSent": "Email Sent",
+  "messageSentSuccess": "Your message has been sent successfully.",
+  "emailSendingFailed": "Email Sending Failed",
+  "errorSendingEmail": "There was an error sending your email. Please try again."
 }

@@ -1,178 +1,112 @@
-// import React from 'react';
-// import {
-//   Box,
-//   Heading,
-//   Text,
-//   FormControl,
-//   FormLabel,
-//   Input,
-//   Textarea,
-//   Button,
-//   VStack,
-// } from '@chakra-ui/react';
-
-// function ContactPage() {
-//   return (
-//     <Box p={5}>
-//       <Heading mb={4}>Contact Us</Heading>
-//       <Text mb={8}>Fill out the form below to get in touch with us.</Text>
-//       <VStack spacing={4}>
-//         <FormControl id="name">
-//           <FormLabel>Name</FormLabel>
-//           <Input type="text" />
-//         </FormControl>
-//         <FormControl id="email">
-//           <FormLabel>Email</FormLabel>
-//           <Input type="email" />
-//         </FormControl>
-//         <FormControl id="message">
-//           <FormLabel>Message</FormLabel>
-//           <Textarea />
-//         </FormControl>
-//         <Button colorScheme="blue" type="submit">
-//           Send Message
-//         </Button>
-//       </VStack>
-//     </Box>
-//   );
-// }
-
-// export default ContactPage;
-
-// Backend code Node.js with sendgrid
-
-// const express = require('express');
-// const sgMail = require('@sendgrid/mail');
-
-// const app = express();
-// app.use(express.json());
-
-// sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
-// app.post('/send-email', (req, res) => {
-//     const { to, subject, text } = req.body;
-
-//     const msg = {
-//         to,
-//         from: 'your-email@example.com',
-//         subject,
-//         text,
-//     };
-
-//     sgMail
-//         .send(msg)
-//         .then(() => res.status(200).send('Email sent.'))
-//         .catch(error => res.status(500).send('Error sending email.'));
-// });
-
-// const PORT = process.env.PORT || 3001;
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import {
   Box,
+  FormControl,
+  FormLabel,
   Input,
   Textarea,
   Button,
   VStack,
   useToast,
+  Flex,
 } from '@chakra-ui/react';
-import ReCAPTCHA from 'react-google-recaptcha';
+import { useTranslation } from 'react-i18next';
 
-function EmailForm() {
+const EmailForm = () => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  const [captchaValue, setCaptchaValue] = useState(null);
   const toast = useToast();
+  const { t } = useTranslation();
 
-  const onCaptchaChange = (value) => {
-    setCaptchaValue(value);
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const sendEmail = () => {
-    if (!captchaValue) {
-      toast({
-        title: 'Please complete the CAPTCHA challenge',
-        status: 'warning',
-        duration: 5000,
-        isClosable: true,
-      });
-      return;
-    }
+    const serviceId = 'service_ven1hqh';
+    const templateId = 'template_76w9kwc';
+    const publicKey = 'F6kKO7g5nGs4gvsc0';
 
-    fetch('/send-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        to: email,
-        subject,
-        text: message,
-        captcha: captchaValue,
-      }),
-    })
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      to_name: 'Mentor',
+      message: message,
+    };
+    console.log('templateParams', templateParams);
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
       .then((response) => {
-        if (response.ok) {
-          toast({
-            title: 'Email sent successfully.',
-            status: 'success',
-            duration: 5000,
-            isClosable: true,
-          });
-          setEmail('');
-          setSubject('');
-          setMessage('');
-          setCaptchaValue(null);
-        } else {
-          throw new Error('Failed to send email');
-        }
+        console.log('Email sent successfully!', response);
+        setName('');
+        setEmail('');
+        setMessage('');
+        toast({
+          title: t('emailSent'),
+          description: t('messageSentSuccess'),
+          status: 'success',
+          duration: 5000,
+          isClosable: true,
+        });
       })
       .catch((error) => {
+        console.error('Error sending email:', error);
         toast({
-          title: 'Error sending email.',
-          description: error.toString(),
+          title: t('emailSendingFailed'),
+          description: t('errorSendingEmail'),
           status: 'error',
-          duration: 9000,
+          duration: 5000,
           isClosable: true,
         });
       });
   };
 
   return (
-    <Box p={5}>
-      <VStack spacing={4}>
-        <Input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Recipient's email"
-          type="email"
-        />
-        <Input
-          value={subject}
-          onChange={(e) => setSubject(e.target.value)}
-          placeholder="Subject"
-        />
-        <Textarea
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="Message"
-        />
-        <ReCAPTCHA
-          sitekey="YOUR_RECAPTCHA_SITE_KEY"
-          onChange={onCaptchaChange}
-        />
-        <Button
-          colorScheme="blue"
-          onClick={sendEmail}
-          isDisabled={!captchaValue}
-        >
-          Send Email
-        </Button>
-      </VStack>
-    </Box>
+    <Flex height="80vh" alignItems="center" justifyContent="center">
+      <Box
+        as="form"
+        onSubmit={handleSubmit}
+        p={5}
+        borderWidth="1px"
+        borderRadius="lg"
+        shadow="lg"
+        // w="80%"
+      >
+        <VStack spacing={1}>
+          <FormControl id="name">
+            <FormLabel>{t('yourName')}</FormLabel>
+            <Input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder={t('enterYourName')}
+            />
+          </FormControl>
+          <FormControl id="email">
+            <FormLabel>{t('yourEmail')}</FormLabel>
+            <Input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder={t('enterYourEmail')}
+            />
+          </FormControl>
+          <FormControl id="message">
+            <FormLabel>{t('yourMessage')}</FormLabel>
+            <Textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder={t('enterYourMessage')}
+              rows={5}
+            />
+          </FormControl>
+          <Button mt={2} type="submit" colorScheme="blue">
+            {t('sendEmail')}
+          </Button>
+        </VStack>
+      </Box>
+    </Flex>
   );
-}
+};
 
 export default EmailForm;

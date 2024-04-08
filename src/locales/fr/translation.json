@@ -60,5 +60,16 @@
   "oneOnOneCoaching": "Coaching individuel : Sessions personnalisées axées sur des domaines spécifiques d'amélioration, vous aidant à surmonter les défis et à développer efficacement vos compétences.",
   "careerGuidance": "Orientation professionnelle : Obtenez de l'aide pour la recherche d'emploi, la rédaction de CV et la préparation aux entretiens, le tout adapté à l'industrie du développement web pour améliorer votre employabilité.",
   "technicalTraining": "Formation technique : Tutoriels approfondis sur les technologies web modernes, les meilleures pratiques en développement logiciel et la compréhension des méthodologies agiles pour vous maintenir à jour et prêt pour le marché.",
-  "projectSupport": "Support de projet : Recevez des conseils sur des projets réels, couvrant toutes les phases de la planification et du développement à la mise en service et la maintenance, vous assurant d'acquérir une expérience pratique."
+  "projectSupport": "Support de projet : Recevez des conseils sur des projets réels, couvrant toutes les phases de la planification et du développement à la mise en service et la maintenance, vous assurant d'acquérir une expérience pratique.",
+  "yourName": "Votre nom",
+  "enterYourName": "Entrez votre nom",
+  "yourEmail": "Votre email",
+  "enterYourEmail": "Entrez votre email",
+  "yourMessage": "Votre message",
+  "enterYourMessage": "Entrez votre message",
+  "sendEmail": "Envoyer l'email",
+  "emailSent": "Email envoyé",
+  "messageSentSuccess": "Votre message a été envoyé avec succès.",
+  "emailSendingFailed": "Échec de l'envoi de l'email",
+  "errorSendingEmail": "Une erreur s'est produite lors de l'envoi de votre email. Veuillez réessayer."
 }
