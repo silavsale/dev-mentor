@@ -148,6 +148,7 @@ import {
   SimpleGrid,
   Tooltip,
   useColorModeValue,
+  useBreakpointValue,
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import imageOfCoder from '../assets/Coder.webp';
@@ -155,6 +156,7 @@ import imageOfCoder from '../assets/Coder.webp';
 function AboutTheMentor() {
   const { t } = useTranslation();
   const bgColor = useColorModeValue('gray.100', 'gray.700');
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
   const clients = [
     {
@@ -238,26 +240,49 @@ function AboutTheMentor() {
             >
               {t('listOfClients')}
             </Heading>
-            <SimpleGrid columns={3} spacing={5} mt={2}>
-              {clients.map((client) => (
-                <Tooltip
-                  key={client.name}
-                  label={t(client.description)}
-                  placement="bottom"
-                  hasArrow
-                >
-                  <Box
-                    cursor="pointer"
-                    bg={bgColor}
-                    borderRadius={5}
-                    p={3}
-                    alignContent="center"
+            {isMobile ? (
+              <SimpleGrid columns={1} spacing={5} mt={2}>
+                {clients.map((client) => (
+                  <Tooltip
+                    key={client.name}
+                    label={t(client.description)}
+                    placement="bottom"
+                    hasArrow
                   >
-                    {t(client.name)}
-                  </Box>
-                </Tooltip>
-              ))}
-            </SimpleGrid>
+                    <Box
+                      cursor="pointer"
+                      bg={bgColor}
+                      borderRadius={5}
+                      p={3}
+                      alignContent="center"
+                    >
+                      {t(client.name)}
+                    </Box>
+                  </Tooltip>
+                ))}
+              </SimpleGrid>
+            ) : (
+              <SimpleGrid columns={3} spacing={5} mt={2}>
+                {clients.map((client) => (
+                  <Tooltip
+                    key={client.name}
+                    label={t(client.description)}
+                    placement="bottom"
+                    hasArrow
+                  >
+                    <Box
+                      cursor="pointer"
+                      bg={bgColor}
+                      borderRadius={5}
+                      p={3}
+                      alignContent="center"
+                    >
+                      {t(client.name)}
+                    </Box>
+                  </Tooltip>
+                ))}
+              </SimpleGrid>
+            )}
           </Box>
         </VStack>
       </Container>
