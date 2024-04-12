@@ -2,14 +2,10 @@ import React from 'react';
 import { Box, Container, VStack, Heading, Image } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 
-import Navbar from './Navbar';
-import AboutTheMentor from './AboutTheMentor';
-import image from '../assets/Students.png';
+import image from '../assets/WebMentor.png';
 import MentorDescriptionShort from './MentorDescription';
 import TechMentorship from './Technologies';
-import Footer from './Footer';
 import MentorshipServices from './MentorshipServices';
-import WebDevelopmentChecklist from './WebDevelopmentChecklist';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -24,7 +20,7 @@ const Home = () => {
         </Box>
         <VStack spacing={8}>
           {/* <AboutTheMentor /> */}
-          <Image src={image} alt="Devs" width="50%" borderRadius="10px" />
+          <Image src={image} alt="Devs" width="35%" />
           <MentorshipServices />
           <MentorDescriptionShort />
           {/* <WebDevelopmentChecklist /> */}
