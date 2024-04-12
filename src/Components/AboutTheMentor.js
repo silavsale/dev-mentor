@@ -253,7 +253,8 @@ function AboutTheMentor() {
               cursor="pointer"
               bg={bgColor}
               borderRadius={5}
-              p={5}
+              p={7}
+              m={{ base: 1, md: 0, lg: 1 }}
               textAlign="center"
             >
               <Text fontSize={{ sm: 'md', md: 'lg' }}>{t(client.name)}</Text>
