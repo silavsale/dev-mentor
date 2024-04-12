@@ -214,7 +214,7 @@ function AboutTheMentor() {
         m={5}
         src={imageOfCoder}
         alt={t('Devs')}
-        width="20%"
+        width={{ base: '70%', md: '25%' }}
         borderRadius="10px"
       />
       <CustomBox w="70%">
@@ -228,7 +228,6 @@ function AboutTheMentor() {
           {t('mentorRoleEvolution')}
         </Text>
       </CustomBox>
-      {/* <CustomBox> */}
       <Heading
         fontSize={{ sm: 'xl', md: '3xl' }}
         color="teal.400"
@@ -240,7 +239,7 @@ function AboutTheMentor() {
       <SimpleGrid
         columns={{ sm: '1', md: '3' }}
         spacing={{ sm: '2', md: '3' }}
-        mt={2}
+        mb={20}
       >
         {clients.map((client) => (
           <Tooltip
@@ -253,7 +252,7 @@ function AboutTheMentor() {
               cursor="pointer"
               bg={bgColor}
               borderRadius={5}
-              p={7}
+              p={{ base: 5, md: 7 }}
               m={{ base: 1, md: 0, lg: 1 }}
               textAlign="center"
             >

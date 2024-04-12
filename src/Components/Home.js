@@ -14,7 +14,7 @@ const Home = () => {
     <Box textAlign="center" fontSize="xl">
       <Container maxW="container.md">
         <Box p={4}>
-          <Heading as="h1" size="xl" mb={6}>
+          <Heading as="h1" size="xl" mb={6} color="teal.400">
             {t('welcomeToYourPathToTech')}
           </Heading>
         </Box>
