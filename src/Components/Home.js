@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Container, VStack, Heading, Image } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 
-import image from '../assets/WebMentor.png';
+import image from '../assets/WebMentor_small.png';
 import MentorDescriptionShort from './MentorDescription';
 import TechMentorship from './Technologies';
 import MentorshipServices from './MentorshipServices';
