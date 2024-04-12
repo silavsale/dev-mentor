@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box, Heading, Wrap, WrapItem, Tag } from '@chakra-ui/react';
+import { Heading, Wrap, WrapItem, Tag } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
+import CustomBox from './custom-ui/CustomBox';
 
 function TechMentorship() {
   const { t } = useTranslation();
-
   const techStack = [
     'JavaScript',
     'React',
@@ -35,14 +35,7 @@ function TechMentorship() {
   ];
 
   return (
-    <Box
-      mt={10}
-      mb={24}
-      p={10}
-      borderWidth="1px"
-      borderRadius="lg"
-      boxShadow="lg"
-    >
+    <CustomBox mb="24">
       <Heading mb={4}> {t('technologiesIMentorIn')}</Heading>
       <Wrap>
         {techStack.map((tech) => (
@@ -53,7 +46,7 @@ function TechMentorship() {
           </WrapItem>
         ))}
       </Wrap>
-    </Box>
+    </CustomBox>
   );
 }
 

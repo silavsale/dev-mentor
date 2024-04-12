@@ -2,12 +2,15 @@ import React from 'react';
 import { Box, Heading, Text, List, ListItem, ListIcon } from '@chakra-ui/react';
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import { useTranslation } from 'react-i18next';
+import { useComponentsBackgroundColor } from '../config/styles';
+import CustomBox from './custom-ui/CustomBox';
 
 function MentorshipServices() {
   const { t } = useTranslation();
+  const backgroundColor = useComponentsBackgroundColor();
 
   return (
-    <Box p={5} shadow="md" borderRadius="lg" borderWidth="1px">
+    <CustomBox>
       <Heading mb={4}>{t('whatIOffer')}</Heading>
       <Text mb={4}>{t('mentorshipProgramDescription')}</Text>
       <List spacing={3}>
@@ -28,7 +31,7 @@ function MentorshipServices() {
           {t('projectSupport')}
         </ListItem>
       </List>
-    </Box>
+    </CustomBox>
   );
 }
 

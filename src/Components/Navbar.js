@@ -19,8 +19,8 @@ import {
   MenuList,
   MenuItem,
   Box,
-  Spacer,
   Divider,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { FaLaptopCode, FaBars, FaMoon, FaSun, FaGlobe } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
@@ -32,6 +32,7 @@ function Navbar() {
   const { t, i18n } = useTranslation();
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const isMobile = useBreakpointValue({ base: true, md: false });
+  const headerBg = useColorModeValue('gray.100', 'gray.900');
 
   const toggleDrawer = () => setDrawerOpen(!isDrawerOpen);
 
@@ -47,7 +48,8 @@ function Navbar() {
       alignItems="center"
       position="sticky"
       top={0}
-      bg={colorMode === 'light' ? 'white' : 'gray.800'}
+      // bg={colorMode === 'light' ? 'white' : 'gray.800'}
+      bg={headerBg}
       zIndex={1}
       borderBottom="1px solid"
       borderColor={colorMode === 'light' ? 'gray.100' : 'gray.900'}
@@ -175,7 +177,12 @@ function Navbar() {
             </Link>
 
             <Link to="/siteinfo">
-              <Button mx={10} px={1} size={{ sm: 'xs', lg: 'sm' }}>
+              <Button
+                mx={10}
+                px={1}
+                size={{ sm: 'xs', lg: 'sm' }}
+                colorScheme="facebook"
+              >
                 V 1.0
               </Button>
             </Link>
@@ -186,19 +193,25 @@ function Navbar() {
               to="/"
               style={{ textDecoration: 'none', paddingRight: '5px' }}
             >
-              <Button size={{ sm: 'xs', lg: 'md' }}>{t('home')}</Button>
+              <Button size={{ sm: 'xs', lg: 'md' }} colorScheme="facebook">
+                {t('home')}
+              </Button>
             </Link>
             <Link
               to="/about"
               style={{ textDecoration: 'none', paddingRight: '5px' }}
             >
-              <Button size={{ sm: 'xs', lg: 'md' }}>{t('aboutMentor')}</Button>
+              <Button size={{ sm: 'xs', lg: 'md' }} colorScheme="facebook">
+                {t('aboutMentor')}
+              </Button>
             </Link>
             <Link
               to="/contact"
               style={{ textDecoration: 'none', paddingRight: '15px' }}
             >
-              <Button size={{ sm: 'xs', lg: 'md' }}>{t('contact')}</Button>
+              <Button size={{ sm: 'xs', lg: 'md' }} colorScheme="facebook">
+                {t('contact')}
+              </Button>
             </Link>
           </Box>
           <Menu>
@@ -207,6 +220,7 @@ function Navbar() {
               as={Button}
               leftIcon={<FaGlobe />}
               rightIcon={<IoIosArrowDown />}
+              colorScheme="facebook"
             ></MenuButton>
             <MenuList>
               <MenuItem onClick={() => changeLanguage('en')}>English</MenuItem>
@@ -222,6 +236,7 @@ function Navbar() {
             icon={colorMode === 'light' ? <FaMoon /> : <FaSun />}
             onClick={toggleColorMode}
             ml={isMobile ? 0 : 2}
+            colorScheme="facebook"
           />
         </Flex>
       )}

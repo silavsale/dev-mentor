@@ -19,13 +19,10 @@ const Home = () => {
           </Heading>
         </Box>
         <VStack spacing={8}>
-          {/* <AboutTheMentor /> */}
           <Image src={image} alt="Devs" width="35%" />
           <MentorshipServices />
           <MentorDescriptionShort />
-          {/* <WebDevelopmentChecklist /> */}
           <TechMentorship />
-          {/* <ApplicationForm /> */}
         </VStack>
       </Container>
     </Box>

@@ -148,15 +148,14 @@ import {
   SimpleGrid,
   Tooltip,
   useColorModeValue,
-  useBreakpointValue,
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import imageOfCoder from '../assets/Coder.webp';
+import CustomBox from './custom-ui/CustomBox';
 
 function AboutTheMentor() {
   const { t } = useTranslation();
   const bgColor = useColorModeValue('gray.100', 'gray.700');
-  const isMobile = useBreakpointValue({ base: true, md: false });
 
   const clients = [
     {
@@ -210,83 +209,59 @@ function AboutTheMentor() {
   ];
 
   return (
-    <Box textAlign="center" fontSize="xl" m={10}>
-      <Container maxW="container.md">
-        <VStack spacing={8}>
-          <Image
-            src={imageOfCoder}
-            alt={t('Devs')}
-            width="50%"
-            borderRadius="10px"
-          />
-          <Box p={{ base: 4, md: 6 }}>
-            <Heading
-              fontSize={{ base: 'xl', md: '2xl' }}
-              color="teal.400"
+    <VStack spacing={8}>
+      <Image
+        m={5}
+        src={imageOfCoder}
+        alt={t('Devs')}
+        width="20%"
+        borderRadius="10px"
+      />
+      <CustomBox w="70%">
+        <Heading color="teal.400" textAlign="center">
+          {t('aboutTheMentor')}
+        </Heading>
+        <Text mt={4} fontSize={{ sm: 'md', md: 'lg' }}>
+          {t('mentorDescription')}
+        </Text>
+        <Text mt={4} fontSize={{ sm: 'md', md: 'lg' }}>
+          {t('mentorRoleEvolution')}
+        </Text>
+      </CustomBox>
+      {/* <CustomBox> */}
+      <Heading
+        fontSize={{ sm: 'xl', md: '3xl' }}
+        color="teal.400"
+        mt={6}
+        textAlign="center"
+      >
+        {t('listOfClients')}
+      </Heading>
+      <SimpleGrid
+        columns={{ sm: '1', md: '3' }}
+        spacing={{ sm: '2', md: '3' }}
+        mt={2}
+      >
+        {clients.map((client) => (
+          <Tooltip
+            key={client.name}
+            label={t(client.description)}
+            placement="bottom"
+            hasArrow
+          >
+            <Box
+              cursor="pointer"
+              bg={bgColor}
+              borderRadius={5}
+              p={5}
               textAlign="center"
             >
-              {t('aboutTheMentor')}
-            </Heading>
-            <Text mt={4} fontSize={{ base: 'sm', md: 'md' }}>
-              {t('mentorDescription')}
-            </Text>
-            <Text mt={4} fontSize={{ base: 'sm', md: 'md' }}>
-              {t('mentorRoleEvolution')}
-            </Text>
-            <Heading
-              fontSize={{ base: 'md', md: 'xl' }}
-              color="teal.400"
-              mt={6}
-            >
-              {t('listOfClients')}
-            </Heading>
-            {isMobile ? (
-              <SimpleGrid columns={1} spacing={5} mt={2}>
-                {clients.map((client) => (
-                  <Tooltip
-                    key={client.name}
-                    label={t(client.description)}
-                    placement="bottom"
-                    hasArrow
-                  >
-                    <Box
-                      cursor="pointer"
-                      bg={bgColor}
-                      borderRadius={5}
-                      p={3}
-                      alignContent="center"
-                    >
-                      {t(client.name)}
-                    </Box>
-                  </Tooltip>
-                ))}
-              </SimpleGrid>
-            ) : (
-              <SimpleGrid columns={3} spacing={5} mt={2}>
-                {clients.map((client) => (
-                  <Tooltip
-                    key={client.name}
-                    label={t(client.description)}
-                    placement="bottom"
-                    hasArrow
-                  >
-                    <Box
-                      cursor="pointer"
-                      bg={bgColor}
-                      borderRadius={5}
-                      p={3}
-                      alignContent="center"
-                    >
-                      {t(client.name)}
-                    </Box>
-                  </Tooltip>
-                ))}
-              </SimpleGrid>
-            )}
-          </Box>
-        </VStack>
-      </Container>
-    </Box>
+              <Text fontSize={{ sm: 'md', md: 'lg' }}>{t(client.name)}</Text>
+            </Box>
+          </Tooltip>
+        ))}
+      </SimpleGrid>
+    </VStack>
   );
 }
 

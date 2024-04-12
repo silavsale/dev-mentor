@@ -1,13 +1,14 @@
 import React from 'react';
-import { Box, Heading, Text, List, ListItem, ListIcon } from '@chakra-ui/react';
+import { Heading, Text, List, ListItem, ListIcon } from '@chakra-ui/react';
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import { useTranslation } from 'react-i18next';
+import CustomBox from './custom-ui/CustomBox';
 
 function MentorDescriptionShort() {
   const { t } = useTranslation();
 
   return (
-    <Box maxW="xl" p={5} borderWidth="1px" borderRadius="lg" boxShadow="lg">
+    <CustomBox>
       <Heading mb={4}>{t('whyEnrollTitle')}</Heading>
       <Text mb={4}>{t('enrollDescription')}</Text>
       <List spacing={3} mb={4}>
@@ -29,7 +30,7 @@ function MentorDescriptionShort() {
         </ListItem>
       </List>
       <Text>{t('transformYourPassion')}</Text>
-    </Box>
+    </CustomBox>
   );
 }
 

@@ -12,6 +12,7 @@ import {
   Flex,
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
+import CustomBox from './custom-ui/CustomBox';
 
 const EmailForm = () => {
   const [name, setName] = useState('');
@@ -63,7 +64,7 @@ const EmailForm = () => {
 
   return (
     <Flex height="80vh" alignItems="center" justifyContent="center">
-      <Box
+      {/* <Box
         as="form"
         onSubmit={handleSubmit}
         p={5}
@@ -71,7 +72,8 @@ const EmailForm = () => {
         borderRadius="lg"
         shadow="lg"
         // w="80%"
-      >
+      > */}
+      <CustomBox as="form" onSubmit={handleSubmit}>
         <VStack spacing={1}>
           <FormControl id="name">
             <FormLabel>{t('yourName')}</FormLabel>
@@ -104,7 +106,7 @@ const EmailForm = () => {
             {t('sendEmail')}
           </Button>
         </VStack>
-      </Box>
+      </CustomBox>
     </Flex>
   );
 };
